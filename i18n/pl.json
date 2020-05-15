@@ -1,0 +1,15 @@
+{
+    "nav": {
+        "about": "O mnie",
+        "technologies": "Technologie",
+        "projecs": "Projekty"
+    },
+    "landing": {
+        "hello": "Cześć, mam na imię",
+        "see": "Zobacz moje portfolio!",
+        "tags": {
+            "place": "#łódź",
+            "technology":"#nowetechnologie"
+        }
+    }
+}

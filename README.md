@@ -1,5 +1,5 @@
 # My personal portfolio
-A simple webpage created using semantic HTML, JS and CSS. I created this site as my portfolio.
+A simple webpage created using semantic HTML, JS and CSS. I created this site as my portfolio. You can see this at [patryk.fun](https://patryk.fun)
 
 ## Technology
 Project is created with:
@@ -11,7 +11,7 @@ Project is created with:
 ## Features
 *  Light and Dark mode (based on user preferences)
 *  Double menu mode - fullscreen on mobile
-#### To Do
+### To Do
 *  Landing page animation on mouse move
 
 ## Setup

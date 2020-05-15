@@ -1,0 +1,16 @@
+{
+    "nav": {
+        "about": "About me",
+        "technologies": "Technologies",
+        "projects": "Projects"
+    },
+    "landing": {
+      "hello": "Hello, My name is",
+      "see": "Let's see my portfolio!",
+      "tags":{
+          "place": "#lodz",
+          "technology":"#newtechnologies"
+
+      }
+    }
+  }

@@ -237,18 +237,18 @@ nav>ul li {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: baseline;
 }
 
 .tag {
-    flex: 100%;
+    margin-right: 10px;
     display: flex;
     font-weight: 600;
     justify-content: flex-end;
 }
 
 .tag-in {
-    width: 85px;
+    width: 95px;
 }
 
 .landing-major h1 {
@@ -409,7 +409,7 @@ nav>ul li {
         --text-color-richer: hsl(210, 50%, 72%);
         --text-color-highlight: hsl(25, 70%, 45%);
         --main-background: rgb(61, 61, 61);
-        --primary: rgb(221, 189, 209);
+        --primary: rgb(247, 231, 241);
     }
     header .logo>span {
         background-image: url(../images/logo_white.png);
@@ -430,11 +430,13 @@ nav>ul li {
 
 @media (min-width: 768px) {
     .tag {
+        flex: 100%;
         justify-content: flex-end;
     }
     .tags {
         padding-top: 0;
         padding-bottom: 0;
+        align-items: flex-end;
     }
     .button__landing {
         margin-top: 35px;

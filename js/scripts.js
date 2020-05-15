@@ -1,3 +1,5 @@
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
 
     WebFont.load({
@@ -11,6 +13,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
 
+    // const translator = new Translator();
     const menuButton = document.querySelector(".menuButton");
     const navLinks = document.querySelectorAll("nav > ul > li a");
     const body = document.querySelector("body");
@@ -31,11 +34,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let fittyLength = myFittyElement.length;
     let fittyDone = 0;
 
-    myFittyElement.forEach((value)=>{
+    var translator = new Translator({
+        persist: false,
+        languages: ["en","pl"],
+        defaultLanguage: "pl",
+        detectLanguage: false,
+        filesLocation: "/i18n"
+      });
+      
+      translator.load();
+
+    myFittyElement.forEach((value) => {
         value.element.addEventListener('fit', function (e) {
-                fittyDone++;
-                if(fittyDone == fittyLength) updateTags();
-            });
+            fittyDone++;
+            if (fittyDone == fittyLength) updateTags();
+        });
     })
 
 
@@ -52,14 +65,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }, 250));
 
     function updateTags() {
-        customMargin = 0;  
+        customMargin = 0;
         tags_array.forEach((value, index) => {
-            if(!mobileView)
+            if (!mobileView) {
                 customMargin += 30 + (50 * index / 10);
-            else
-                customMargin = 0;
-            
-            value.style.marginRight = customMargin + "px";
+                value.style.marginRight = customMargin + "px";
+            }
+            else {
+                customMargin = "";
+                value.style.marginRight = "";
+
+            }
+
         })
 
         let newtags = tags_array.concat().sort((a, b) => {
