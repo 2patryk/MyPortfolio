@@ -1,164 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <title>Patryk Ordon — Front-end developer — Portfolio</title>
-    <meta name="title" content="Patryk Ordon — Front-end developer — Portfolio">
-    <meta name="description" content="">
-    <meta name="author" content="Patryk Ordon">
+    <meta
+      name="title"
+      content="Patryk Ordon — Front-end developer — Portfolio"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Patryk Ordon" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://patryk.fun/">
-    <meta property="og:title" content="Patryk Ordon — Front-end developer — Portfolio">
-    <meta property="og:description"
-        content="Mam na imię Patryk, tworzę strony internetowe w oparciu o framework Angular. Największą radość sprawia mi projektowanie i budowa strony od części front-endowej.">
-    <meta property="og:image" content="https://patryk.fun/images/min.png">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://patryk.fun/" />
+    <meta
+      property="og:title"
+      content="Patryk Ordon — Front-end developer — Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Mam na imię Patryk, tworzę strony internetowe w oparciu o framework Angular. Największą radość sprawia mi projektowanie i budowa strony od części front-endowej."
+    />
+    <meta property="og:image" content="https://patryk.fun/images/min.png" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://patryk.fun/">
-    <meta property="twitter:title" content="Patryk Ordon — Front-end developer — Portfolio">
-    <meta property="twitter:description"
-        content="Mam na imię Patryk, tworzę strony internetowe w oparciu o framework Angular. Największą radość sprawia mi projektowanie i budowa strony od części front-endowej.">
-    <meta property="twitter:image" content="https://patryk.fun/images/min.png">
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://patryk.fun/" />
+    <meta
+      property="twitter:title"
+      content="Patryk Ordon — Front-end developer — Portfolio"
+    />
+    <meta
+      property="twitter:description"
+      content="Mam na imię Patryk, tworzę strony internetowe w oparciu o framework Angular. Największą radość sprawia mi projektowanie i budowa strony od części front-endowej."
+    />
+    <meta
+      property="twitter:image"
+      content="https://patryk.fun/images/min.png"
+    />
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
- 
-    <link href="styles/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css?v=1.0">
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+    <link href="styles/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/styles.css?v=1.0" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-35950339-10"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-35950339-10"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'UA-35950339-10');
-    </script> -->
-
+      gtag("config", "UA-35950339-10");
+    </script>
 
     <script src="js/webfont.js"></script>
     <script src="js/fitty.js"></script>
     <script src="js/aos.js"></script>
-    <script src="js/translator.js"></script>
+    <script src="js/translate.js"></script>
     <script src="js/scripts.js"></script>
-</head>
+  </head>
 
-<body class="fill-height-or-more">
-
+  <body class="fill-height-or-more">
     <header id="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-8 col-logo">
-                    <a class="logo" href="https://patryk.fun">
-                        <span>
-                            Patryk Ordon Portfolio
-                        </span>
-                    </a>
-                </div>
-                <div class="col-4 col-switch col-menu">
-                    <button class="menuButton" id="nav-icon4">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-                
-                <div class="col-lg-9 col-nav">
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="#about" data-i18n="nav.about">O mnie</a>
-                            </li>
-                            <li>
-                                <a href="#projects" data-i18n="nav.projects">Projekty</a>
-                            </li>
-                            <li>
-                                <a href="#about" data-i18n="nav.technologies">Technologie</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-8 col-logo">
+            <a class="logo" href="https://patryk.fun">
+              <span>
+                Patryk Ordon Portfolio
+              </span>
+            </a>
+          </div>
+          <div class="col-4 col-switch col-menu">
+            <button class="menuButton" id="nav-icon4">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
 
-            </div>
+          <div class="col-lg-9 col-nav">
+            <nav class="navigation">
+              <ul>
+                <li>
+                  <a href="#home" data-i18n="nav.home">Home</a>
+                </li>
+                <li>
+                  <a href="#about" data-i18n="nav.about">O mnie</a>
+                </li>
+                <li>
+                  <a href="#projects" data-i18n="nav.projects">Projekty</a>
+                </li>
+                <li>
+                  <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-
+      </div>
     </header>
 
-    <section class="section section__landing" id="landing">
-        <div class="landing-background">
-            <div class="landing-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="landing-major">
-                                <div class="landing-box">
-                                    <h4 data-aos="fade-right" data-i18n="landing.hello">Cześć, mam na imię</h4>
-                                    <h1 data-aos="fade-right" data-aos-delay="200">Patryk Ordon</h1>
-                                    <h2 data-aos="fade-right" data-aos-delay="400">FRONT-END DEVELOPER</h2>
-                                    <a href="#projects" class="button button__landing" data-aos="fade-right"
-                                        data-aos-delay="600" data-i18n="landing.see">Zobacz moje portfolio</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div data-aos="fade-left" data-aos-delay="400" class="tags">
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span>#23yo</span>
-                                    </div>
-                                </div>
-
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span>#student</span>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span data-i18n="landing.tags.place">#lodz</span>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span>#angular</span>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span>#android</span>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span data-i18n="landing.tags.technology">#newtechnology</span>
-                                    </div>
-                                </div>
-                                <div class="tag">
-                                    <div class="tag-in">
-                                        <span>#JSeverywhere</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <section class="section section__landing" id="home">
+      <div class="landing-background">
+        <div class="landing-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="landing-major">
+                  <div class="landing-box">
+                    <h4 data-aos="fade-right" data-i18n="landing.hello">
+                      Cześć, mam na imię
+                    </h4>
+                    <h1 data-aos="fade-right" data-aos-delay="200">
+                      Patryk Ordon
+                    </h1>
+                    <h2
+                      class="description"
+                      data-aos="fade-right"
+                      data-aos-delay="400"
+                    >
+                      FRONT-END DEVELOPER
+                    </h2>
+                    <a
+                      href="#projects"
+                      class="button button__landing"
+                      data-aos="fade-right"
+                      data-aos-delay="600"
+                      data-i18n="landing.construction"
+                      >Strona w budowie</a
+                    >
+                  </div>
                 </div>
+              </div>
+              <div class="col-md-6">
+                <div data-aos="fade-left" data-aos-delay="400" class="tags">
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span>#23yo</span>
+                    </div>
+                  </div>
 
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span>#student</span>
+                    </div>
+                  </div>
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span data-i18n="landing.tags.place">#lodz</span>
+                    </div>
+                  </div>
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span>#angular</span>
+                    </div>
+                  </div>
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span>#android</span>
+                    </div>
+                  </div>
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span data-i18n="landing.tags.technology"
+                        >#newtechnology</span
+                      >
+                    </div>
+                  </div>
+                  <div class="tag">
+                    <div class="tag-in">
+                      <span>#JSeverywhere</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-
+      </div>
     </section>
+
+    <section class="section section__about" id="about">
+      <div class="section-in">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2 class="title-section" data-i18n="nav.about">O mnie</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="gallery">
+                <div class="gallery-col">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="100"
+                    src="images/about_cmp/bike2.jpg"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                    src="images/about_cmp/bike.jpg"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="500"
+                    src="images/about_cmp/sun.jpg"
+                  />
+                </div>
+                <div class="gallery-col">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="150"
+                    src="images/about_cmp/air.jpg"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="350"
+                    src="images/about_cmp/planes.jpg"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="550"
+                    src="images/about_cmp/sea.jpg"
+                  />
+                </div>
+                <div class="gallery-col">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    src="images/about_cmp/winter.jpg"
+                  />
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay="600"
+                    src="images/about_cmp/escooter.jpg"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="about-box">
+                <div
+                  data-aos="fade-left"
+                  data-aos-delay="300"
+                  class="back title"
+                >
+                  <h1>
+                    <span data-i18n="about.hello.hello">Witaj</span>
+                    <span class="primary" data-i18n="about.hello.once"
+                      >jeszcze raz!</span
+                    >
+                  </h1>
+                </div>
+                <div
+                  data-aos="fade-left"
+                  data-aos-delay="400"
+                  class="back description"
+                >
+                  <h5 data-i18n="about.desc.first">
+                    Mam na imię Patryk, jestem początkującym front-end
+                    developerem. Zbliżam się do ukończenia moich studiów
+                    inżynierskich na kierunku informatyka stosowana na Uniwersytecie
+                    Łódzkim. Dzięki nim zyskałem szersze spojrzenie na cały
+                    świat informatyki.
+                  </h5>
+                  <h5>
+                    <span data-i18n="about.desc.most"
+                      >Największą radość sprawia mi</span
+                    >
+                    <span
+                      class="bold primary"
+                      data-i18n="about.desc.creating-web"
+                      >tworzenie stron internetowych</span
+                    >
+                    <span data-i18n="about.desc.and">oraz</span>
+                    <span
+                      class="bold primary"
+                      data-i18n="about.desc.creating-mobile"
+                      >aplikacji mobilnych.</span
+                    >
+                    <span data-i18n="about.desc.now"
+                      >Aktualnie skupiam się na rozwoju w obszarze frameworków
+                      front-endowych - głównie Angular oraz w przyszłości
+                      React.</span
+                    >
+                  </h5>
+                  <h5>
+                    <span data-i18n="about.desc.interest"
+                      >Lubię aktywnie spędzać czas - na przykład jeżdżąc rowerem
+                      w ciekawe miejsca i przy okazji robiąc zdjęcia.</span
+                    >
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section__projects" id="projects">
-
+      <div class="section-in">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2 class="title-section"  data-i18n="nav.projects">Projekty</h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-
-</body>
-
+    <section class="section section__contact" id="contact">
+      <div class="section-in">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2 class="title-section"  data-i18n="nav.contact">Kontakt</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

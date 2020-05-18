@@ -4,54 +4,56 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     WebFont.load({
         google: {
-            families: ['Montserrat:300,400,600,700,800']
-        }
+            families: ['Montserrat:300,400,500,600,700,800']
+        },
+        active: fitMe
+
     });
+
 
     AOS.init({
         once: true,
     });
 
-
-    // const translator = new Translator();
     const menuButton = document.querySelector(".menuButton");
-    const navLinks = document.querySelectorAll("nav > ul > li a");
+    const navLinks = document.querySelectorAll("nav > ul > li");
     const body = document.querySelector("body");
     const colNav = document.querySelector("header");
     const tags = document.querySelectorAll(".tag");
     const tags_array = [...tags];
     let customMargin = 0;
     let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
     let mobileView = window.innerWidth < 768 ? true : false;
     let newMobileView = mobileView;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-    const myFittyElement = fitty('.tag .tag-in > span', {
-        minSize: 8,
-        maxSize: 300,
+    const translator = new Translator({
+        persist: false,
+        languages: ["en", "pl"],
+        defaultLanguage: "en",
+        detectLanguage: true,
+        filesLocation: "/i18n"
     });
 
-    let fittyLength = myFittyElement.length;
-    let fittyDone = 0;
+    translator.load();
 
-    var translator = new Translator({
-        persist: false,
-        languages: ["en","pl"],
-        defaultLanguage: "pl",
-        detectLanguage: false,
-        filesLocation: "/i18n"
-      });
-      
-      translator.load();
+    function fitMe() {
 
-    myFittyElement.forEach((value) => {
-        value.element.addEventListener('fit', function (e) {
-            fittyDone++;
-            if (fittyDone == fittyLength) updateTags();
+        const myFittyElement = fitty('.tag .tag-in > span', {
+            minSize: 8,
+            maxSize: 300,
         });
-    })
+        let fittyLength = myFittyElement.length;
+        let fittyDone = 0;
 
+        myFittyElement.forEach((value) => {
+            value.element.addEventListener('fit', function (e) {
+                fittyDone++;
+                if (fittyDone == fittyLength) updateTags();
+            });
+        })
+    }
 
+    updateMenuActive(window.scrollY)
 
     window.addEventListener('resize', debounce(function () {
         let vh = window.innerHeight * 0.01;
@@ -63,6 +65,73 @@ window.addEventListener('DOMContentLoaded', (event) => {
             updateTags();
         }
     }, 250));
+
+    window.addEventListener('scroll', () => {
+        updateMenuActive(window.scrollY);
+        var header = document.getElementById("header");
+        var sticky = header.offsetTop;
+        if (window.pageYOffset > sticky) {
+            header.classList.add("sticky");
+        } else {
+            header.classList.remove("sticky");
+        }
+    });
+
+    menuButton.addEventListener('click', () => {
+        if (colNav.classList.contains("overlay")) {
+            colNav.classList.remove("overlay");
+            menuButton.classList.remove("open");
+            body.classList.remove("no-scroll");
+        } else {
+            colNav.classList.add("overlay");
+            menuButton.classList.add("open");
+            body.classList.add("no-scroll");
+        }
+    });
+
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].children[0].addEventListener("click", () => {
+            colNav.classList.remove("overlay");
+            menuButton.classList.remove("open");
+            body.classList.remove("no-scroll");
+
+        });
+    }
+
+
+
+    //from Underscore.js
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this, args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
+
+    function updateMenuActive(scrollY) {
+        navLinks.forEach(element => {
+            const href = element.children[0].getAttribute('href');
+            const ref = document.children[0].querySelector(href)
+                  if (ref.offsetTop-1 <= scrollY && ref.offsetTop + ref.offsetHeight > scrollY) {
+                navLinks.forEach(inElement =>{
+                    inElement.classList.remove("active");
+                })
+                element.classList.add("active");
+            }
+            else{
+                element.classList.remove("active");
+            }
+
+        });
+    }
 
     function updateTags() {
         customMargin = 0;
@@ -92,56 +161,5 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 value.classList.add("order-" + (index + 1));
         })
     }
-
-
-    menuButton.addEventListener('click', () => {
-        if (colNav.classList.contains("overlay")) {
-            colNav.classList.remove("overlay");
-            menuButton.classList.remove("open");
-            body.classList.remove("no-scroll");
-        } else {
-            colNav.classList.add("overlay");
-            menuButton.classList.add("open");
-            body.classList.add("no-scroll");
-        }
-    });
-
-    for (var i = 0; i < navLinks.length; i++) {
-        navLinks[i].addEventListener("click", () => {
-            colNav.classList.remove("overlay");
-            menuButton.classList.remove("open");
-            body.classList.remove("no-scroll");
-
-        });
-    }
-
-    window.addEventListener('scroll', () => {
-        var header = document.getElementById("header");
-        var sticky = header.offsetTop;
-        if (window.pageYOffset > sticky) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
-    });
-
-    //from Underscore.js
-    function debounce(func, wait, immediate) {
-        var timeout;
-        return function () {
-            var context = this, args = arguments;
-            var later = function () {
-                timeout = null;
-                if (!immediate) func.apply(context, args);
-            };
-            var callNow = immediate && !timeout;
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-            if (callNow) func.apply(context, args);
-        };
-    };
-
-
-
 
 });

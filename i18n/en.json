@@ -1,16 +1,32 @@
 {
-    "nav": {
-        "about": "About me",
-        "technologies": "Technologies",
-        "projects": "Projects"
+  "nav": {
+    "about": "About me",
+    "technologies": "Technologies",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "landing": {
+    "hello": "Hello, My name is",
+    "see": "Let's see my portfolio!",
+    "construction": "Webpage under construction",
+    "tags": {
+      "place": "#lodz",
+      "technology": "#newtechnologies"
+    }
+  },
+  "about": {
+    "hello": {
+      "hello": "Hello",
+      "once": "once again!"
     },
-    "landing": {
-      "hello": "Hello, My name is",
-      "see": "Let's see my portfolio!",
-      "tags":{
-          "place": "#lodz",
-          "technology":"#newtechnologies"
-
-      }
+    "desc": {
+      "first": "My name is Patryk, I am a beginner front-end developer. I am approaching completiton my engineering studies in applied computer science at the University of Lodz. Thanks to them I have gained a broader view of the whole world of computer science.",
+      "most": "I like to",
+      "creating-web": "creating web pages",
+      "and": "and",
+      "creating-mobile": "mobile apps",
+      "now": "most. Currently I am focusing on development in the area of front-end frameworks - mainly Angular and in the future React.",
+      "interest": "I like to spend my time actively - for example, cycling to interesting places and taking pictures."
     }
   }
+}

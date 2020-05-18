@@ -2,14 +2,31 @@
     "nav": {
         "about": "O mnie",
         "technologies": "Technologie",
-        "projecs": "Projekty"
+        "projecs": "Projekty",
+        "contact": "Kontakt"
     },
     "landing": {
         "hello": "Cześć, mam na imię",
         "see": "Zobacz moje portfolio!",
+        "construction": "Strona w budowie",
         "tags": {
             "place": "#łódź",
             "technology":"#nowetechnologie"
+        }
+    },
+    "about":{
+        "hello":{
+            "hello":"Cześć",
+            "once":"jeszcze raz!"
+        },
+        "desc":{
+            "first":"Mam na imię Patryk, jestem początkującym front-end developerem. Zbliżam się do ukończenia moich studiów inżynierskich na kierunku informatyka stosowana na Uniwersytecie Łódzkim. Dzięki nim zyskałem szersze spojrzenie na cały świat informatyki.",
+            "most":"Największą radość sprawia mi",
+            "creating-web":"tworzenie stron internetowych",
+            "and":"oraz",
+            "creating-mobile":"aplikacji mobilnych.",
+            "now":"Aktualnie skupiam się na rozwoju w obszarze frameworków front-endowych - głównie Angular oraz w przyszłości React.",
+            "interest":"Lubię aktywnie spędzać czas - na przykład jeżdżąc rowerem w ciekawe miejsca i przy okazji robiąc zdjęcia."
         }
     }
 }
