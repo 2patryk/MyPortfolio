@@ -9,7 +9,10 @@
       name="title"
       content="Patryk Ordon — Front-end developer — Portfolio"
     />
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Mam na imię Patryk, tworzę strony internetowe w oparciu o framework Angular. Największą radość sprawia mi projektowanie i budowa strony od części front-endowej."
+    />
     <meta name="author" content="Patryk Ordon" />
 
     <!-- Open Graph / Facebook -->
@@ -42,9 +45,9 @@
     />
 
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
-
     <link href="styles/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/styles.css?v=1.0" />
+    <link href="styles/swiper.min.css" rel="stylesheet" />
+    <link href="styles/styles.css?v=1.0" rel="stylesheet" />
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -65,6 +68,7 @@
     <script src="js/fitty.js"></script>
     <script src="js/aos.js"></script>
     <script src="js/translate.js"></script>
+    <script src="js/swiper.min.js"></script>
     <script src="js/scripts.js"></script>
   </head>
 
@@ -80,7 +84,7 @@
             </a>
           </div>
           <div class="col-4 col-switch col-menu">
-            <button class="menuButton" id="nav-icon4">
+            <button aria-label="Menu" class="menuButton" id="nav-icon4">
               <span></span>
               <span></span>
               <span></span>
@@ -102,6 +106,9 @@
                 <li>
                   <a href="#contact" data-i18n="nav.contact">Kontakt</a>
                 </li>
+                <!-- <li>
+                  <a href="#contact" data-i18n="nav.contact">PL/EN</a>
+                </li> -->
               </ul>
             </nav>
           </div>
@@ -109,76 +116,78 @@
       </div>
     </header>
 
-    <section class="section section__landing" id="home">
-      <div class="landing-background">
-        <div class="landing-content">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="landing-major">
-                  <div class="landing-box">
-                    <h4 data-aos="fade-right" data-i18n="landing.hello">
-                      Cześć, mam na imię
-                    </h4>
-                    <h1 data-aos="fade-right" data-aos-delay="200">
-                      Patryk Ordon
-                    </h1>
-                    <h2
-                      class="description"
-                      data-aos="fade-right"
-                      data-aos-delay="400"
-                    >
-                      FRONT-END DEVELOPER
-                    </h2>
-                    <a
-                      href="#projects"
-                      class="button button__landing"
-                      data-aos="fade-right"
-                      data-aos-delay="600"
-                      data-i18n="landing.construction"
-                      >Strona w budowie</a
-                    >
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div data-aos="fade-left" data-aos-delay="400" class="tags">
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span>#23yo</span>
-                    </div>
-                  </div>
-
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span>#student</span>
-                    </div>
-                  </div>
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span data-i18n="landing.tags.place">#lodz</span>
-                    </div>
-                  </div>
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span>#angular</span>
-                    </div>
-                  </div>
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span>#android</span>
-                    </div>
-                  </div>
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span data-i18n="landing.tags.technology"
-                        >#newtechnology</span
+    <main>
+      <section class="section section--landing" id="home">
+        <div class="landing-background">
+          <div class="landing-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="landing-major">
+                    <div class="landing-box">
+                      <h4 data-aos="fade-right" data-i18n="landing.hello">
+                        Cześć, mam na imię
+                      </h4>
+                      <h1 data-aos="fade-right" data-aos-delay="200">
+                        Patryk Ordon
+                      </h1>
+                      <h2
+                        class="description"
+                        data-aos="fade-right"
+                        data-aos-delay="400"
+                      >
+                        FRONT-END DEVELOPER
+                      </h2>
+                      <a
+                        href="#projects"
+                        class="button button--landing button--primary"
+                        data-aos="fade-right"
+                        data-aos-delay="600"
+                        data-i18n="landing.construction"
+                        >Strona w budowie</a
                       >
                     </div>
                   </div>
-                  <div class="tag">
-                    <div class="tag-in">
-                      <span>#JSeverywhere</span>
+                </div>
+                <div class="col-md-6">
+                  <div data-aos="fade-left" data-aos-delay="400" class="tags">
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span>#23yo</span>
+                      </div>
+                    </div>
+
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span>#student</span>
+                      </div>
+                    </div>
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span data-i18n="landing.tags.place">#lodz</span>
+                      </div>
+                    </div>
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span>#angular</span>
+                      </div>
+                    </div>
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span>#android</span>
+                      </div>
+                    </div>
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span data-i18n="landing.tags.technology"
+                          >#newtechnology</span
+                        >
+                      </div>
+                    </div>
+                    <div class="tag">
+                      <div class="tag-in">
+                        <span>#JSeverywhere</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -186,152 +195,403 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section__about" id="about">
-      <div class="section-in">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h2 class="title-section" data-i18n="nav.about">O mnie</h2>
+      <section class="section section--about" id="about">
+        <div class="section-in">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2 class="title-section" data-i18n="nav.about">O mnie</h2>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="gallery">
-                <div class="gallery-col">
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                    src="images/about_cmp/bike2.jpg"
-                  />
-                  <img
-                    data-aos="fade-up"
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="gallery">
+                  <div class="gallery-col">
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      src="images/about_cmp/bike2.jpg"
+                    />
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                      src="images/about_cmp/bike.jpg"
+                    />
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="500"
+                      src="images/about_cmp/sun.jpg"
+                    />
+                  </div>
+                  <div class="gallery-col">
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="150"
+                      src="images/about_cmp/air.jpg"
+                    />
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="350"
+                      src="images/about_cmp/planes.jpg"
+                    />
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="550"
+                      src="images/about_cmp/sea.jpg"
+                    />
+                  </div>
+                  <div class="gallery-col">
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                      src="images/about_cmp/winter.jpg"
+                    />
+                    <img
+                      data-aos="fade-up"
+                      data-aos-delay="600"
+                      src="images/about_cmp/escooter.jpg"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <div class="about-box">
+                  <div
+                    data-aos="fade-left"
                     data-aos-delay="300"
-                    src="images/about_cmp/bike.jpg"
-                  />
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="500"
-                    src="images/about_cmp/sun.jpg"
-                  />
-                </div>
-                <div class="gallery-col">
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="150"
-                    src="images/about_cmp/air.jpg"
-                  />
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="350"
-                    src="images/about_cmp/planes.jpg"
-                  />
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="550"
-                    src="images/about_cmp/sea.jpg"
-                  />
-                </div>
-                <div class="gallery-col">
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="200"
-                    src="images/about_cmp/winter.jpg"
-                  />
-                  <img
-                    data-aos="fade-up"
-                    data-aos-delay="600"
-                    src="images/about_cmp/escooter.jpg"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-5">
-              <div class="about-box">
-                <div
-                  data-aos="fade-left"
-                  data-aos-delay="300"
-                  class="back title"
-                >
-                  <h1>
-                    <span data-i18n="about.hello.hello">Witaj</span>
-                    <span class="primary" data-i18n="about.hello.once"
-                      >jeszcze raz!</span
-                    >
-                  </h1>
-                </div>
-                <div
-                  data-aos="fade-left"
-                  data-aos-delay="400"
-                  class="back description"
-                >
-                  <h5 data-i18n="about.desc.first">
-                    Mam na imię Patryk, jestem początkującym front-end
-                    developerem. Zbliżam się do ukończenia moich studiów
-                    inżynierskich na kierunku informatyka stosowana na Uniwersytecie
-                    Łódzkim. Dzięki nim zyskałem szersze spojrzenie na cały
-                    świat informatyki.
-                  </h5>
-                  <h5>
-                    <span data-i18n="about.desc.most"
-                      >Największą radość sprawia mi</span
-                    >
-                    <span
-                      class="bold primary"
-                      data-i18n="about.desc.creating-web"
-                      >tworzenie stron internetowych</span
-                    >
-                    <span data-i18n="about.desc.and">oraz</span>
-                    <span
-                      class="bold primary"
-                      data-i18n="about.desc.creating-mobile"
-                      >aplikacji mobilnych.</span
-                    >
-                    <span data-i18n="about.desc.now"
-                      >Aktualnie skupiam się na rozwoju w obszarze frameworków
-                      front-endowych - głównie Angular oraz w przyszłości
-                      React.</span
-                    >
-                  </h5>
-                  <h5>
-                    <span data-i18n="about.desc.interest"
-                      >Lubię aktywnie spędzać czas - na przykład jeżdżąc rowerem
-                      w ciekawe miejsca i przy okazji robiąc zdjęcia.</span
-                    >
-                  </h5>
+                    class="back title"
+                  >
+                    <h1>
+                      <span data-i18n="about.hello.hello">Kim</span>
+                      <span data-i18n="about.hello.once" class="primary"
+                        >jestem?</span
+                      >
+                    </h1>
+                  </div>
+                  <div
+                    data-aos="fade-left"
+                    data-aos-delay="400"
+                    class="back description"
+                  >
+                    <h5 data-i18n="about.desc.first">
+                      Mam na imię Patryk, jestem początkującym front-end
+                      developerem. Zbliżam się do ukończenia moich studiów
+                      inżynierskich na kierunku informatyka stosowana na
+                      Uniwersytecie Łódzkim. Dzięki nim zyskałem szersze
+                      spojrzenie na cały świat informatyki.
+                    </h5>
+                    <h5>
+                      <span data-i18n="about.desc.most"
+                        >Największą radość sprawia mi</span
+                      >
+                      <span
+                        class="bold primary"
+                        data-i18n="about.desc.creating-web"
+                        >tworzenie stron internetowych</span
+                      >
+                      <span data-i18n="about.desc.and">oraz</span>
+                      <span
+                        class="bold primary"
+                        data-i18n="about.desc.creating-mobile"
+                        >aplikacji mobilnych.</span
+                      >
+                      <span data-i18n="about.desc.now"
+                        >Aktualnie skupiam się na rozwoju w obszarze frameworków
+                        front-endowych - głównie Angular oraz w przyszłości
+                        React.</span
+                      >
+                    </h5>
+                    <h5>
+                      <span data-i18n="about.desc.interest"
+                        >Lubię aktywnie spędzać czas - na przykład jeżdżąc
+                        rowerem w ciekawe miejsca i przy okazji robiąc
+                        zdjęcia.</span
+                      >
+                    </h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section__projects" id="projects">
-      <div class="section-in">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h2 class="title-section"  data-i18n="nav.projects">Projekty</h2>
+      <section class="section section--projects" id="projects">
+        <div class="section-in">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2 class="title-section" data-i18n="nav.projects">Projekty</h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="project project--myrestaurant" data-aos="fade">
+            <div class="container-fluid container-right">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="project__description">
+                    <img
+                      data-aos="fade-up"
+                      class="project__logo project__logo--myrestaurant"
+                      src="./images/mr_logo.png"
+                    />
+                    <h5
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      class="project__title project__title--myrestaurant"
+                      data-i18n="projects.project.myrestaurant.description"
+                    >
+                      Aplikacja internetowa będąca agregatorem restauracji
+                      pozwalającym na oferowanie usług: zamawiania jedzenia,
+                      rezerwacji stolików oraz kombinacji ich obu.
+                    </h5>
+
+                    <div
+                      class="project__technologies"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      <img
+                        class="project__technology"
+                        src="images/angular_white.png"
+                      />
+                    </div>
+
+                    <div
+                      class="project__buttons"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      <a
+                        target="_blank"
+                        rel="noopener"
+                        href="https://mr.patryk.fun"
+                        class="button button--light-fill project__button"
+                        data-i18n="projects.buttons.preview"
+                        >Podgląd</a
+                      >
+                      <!-- <a target="_blank" rel="noopener" href="#" class="button button--light project__button"  data-i18n="projects.buttons.source"
+                        >Kod źrodłowy</a
+                      > -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="project__images">
+                    <div
+                      class="swiper-container swiper-container--right"
+                      data-aos="fade-left"
+                      data-aos-delay="300"
+                    >
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/myrestaurant/mobile.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/myrestaurant/desktop.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/myrestaurant/menu.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/myrestaurant/order.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/myrestaurant/panel.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/myrestaurant/edit.png"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project project--covid" data-aos="fade">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="project__images">
+                    <div
+                      class="swiper-container swiper-container--left"
+                      data-aos="fade-right"
+                      data-aos-delay="300"
+                    >
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/covid/darkc.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/covid/darko.png"
+                          />
+                        </div>
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/covid/desktop.png"
+                          />
+                        </div>
+
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/covid/desktosp.png"
+                          />
+                        </div>
+
+                        <div class="project__image-container slide">
+                          <img
+                            class="project__image"
+                            loading="lazy"
+                            height="500"
+                            width="1000"
+                            src="images/covid/mobile.png"
+                          />
+                        </div>
+                      </div>
+                      <!-- If we need pagination -->
+                      <!-- <div class="swiper-pagination"></div> -->
+
+                      <!-- If we need navigation buttons -->
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="project__description">
+                    <img
+                      data-aos="fade-up"
+                      class="project__logo project__logo--covid"
+                      src="./images/covid_logo.png"
+                    />
+                    <h5
+                      class="project__title project__title--covid"
+                      data-i18n="projects.project.covid.description"
+                    >
+                      Aplikacja internetowa prezentująca statystyki dotyczące
+                      zachorowalności na Koronawirusa na całym świecie.
+                    </h5>
+
+                    <div
+                      class="project__technologies project__technologies--bigger"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      <img
+                        class="project__technology"
+                        src="images/react_logo_normal.png"
+                      />
+                    </div>
+
+                    <div
+                      class="project__buttons"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      <a
+                        target="_blank"
+                        rel="noopener"
+                        href="https://covid.patryk.fun/"
+                        class="button button--dark-fill project__button"
+                        data-i18n="projects.buttons.preview"
+                        >Podgląd</a
+                      >
+                      <a
+                        target="_blank"
+                        rel="noopener"
+                        href="https://github.com/patrykordon/CovidStats"
+                        class="button button--dark project__button"
+                        data-i18n="projects.buttons.source"
+                        >Kod źrodłowy</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section__contact" id="contact">
-      <div class="section-in">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <h2 class="title-section"  data-i18n="nav.contact">Kontakt</h2>
+      <section class="section section--contact" id="contact">
+        <div class="section-in">
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h2 class="title-section" data-i18n="nav.contact">Kontakt</h2>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 </html>

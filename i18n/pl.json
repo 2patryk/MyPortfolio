@@ -16,8 +16,8 @@
     },
     "about":{
         "hello":{
-            "hello":"Cześć",
-            "once":"jeszcze raz!"
+            "hello":"Kim",
+            "once":"jestem?"
         },
         "desc":{
             "first":"Mam na imię Patryk, jestem początkującym front-end developerem. Zbliżam się do ukończenia moich studiów inżynierskich na kierunku informatyka stosowana na Uniwersytecie Łódzkim. Dzięki nim zyskałem szersze spojrzenie na cały świat informatyki.",
@@ -28,5 +28,19 @@
             "now":"Aktualnie skupiam się na rozwoju w obszarze frameworków front-endowych - głównie Angular oraz w przyszłości React.",
             "interest":"Lubię aktywnie spędzać czas - na przykład jeżdżąc rowerem w ciekawe miejsca i przy okazji robiąc zdjęcia."
         }
-    }
+    },
+    "projects":{
+        "buttons":{
+          "preview": "Podgląd",
+          "source": "Kod źródłowy"
+        },
+        "project":{
+          "myrestaurant":{
+            "description":"Aplikacja internetowa będąca agregatorem restauracji pozwalającym na oferowanie usług: zamawiania jedzenia, rezerwacji stolików oraz kombinacji ich obu."
+          },
+          "covid":{
+            "description":"Aplikacja internetowa prezentująca statystyki dotyczące zachorowalności na Koronawirusa na całym świecie."
+          }
+        }
+      }
 }

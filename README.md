@@ -10,7 +10,8 @@ Project is created with:
 
 ## Features
 *  Light and Dark mode (based on user preferences)
-*  Double menu mode - fullscreen on mobile
+*  Double menu mode (upper on PC, fullscreen on mobile)
+*  i18n Auto detect - available languages: English and Polish
 ### To Do
 *  Landing page animation on mouse move
 

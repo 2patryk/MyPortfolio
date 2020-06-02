@@ -16,8 +16,8 @@
   },
   "about": {
     "hello": {
-      "hello": "Hello",
-      "once": "once again!"
+      "hello": "Who am",
+      "once": "I?"
     },
     "desc": {
       "first": "My name is Patryk, I am a beginner front-end developer. I am approaching completiton my engineering studies in applied computer science at the University of Lodz. Thanks to them I have gained a broader view of the whole world of computer science.",
@@ -27,6 +27,20 @@
       "creating-mobile": "mobile apps",
       "now": "most. Currently I am focusing on development in the area of front-end frameworks - mainly Angular and in the future React.",
       "interest": "I like to spend my time actively - for example, cycling to interesting places and taking pictures."
+    }
+  },
+  "projects":{
+    "buttons":{
+      "preview": "Live preview",
+      "source": "Source code"
+    },
+    "project":{
+      "myrestaurant":{
+        "description":"A web application - restaurant aggregator providing services services: ordering food, booking tables and a combination of both."
+      },
+      "covid":{
+        "description":"A web application presenting statistics on the incidence of Coronavirus worldwide."
+      }
     }
   }
 }
