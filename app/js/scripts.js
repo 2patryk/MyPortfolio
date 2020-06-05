@@ -1,4 +1,12 @@
+import AOS from 'aos';
+
+import fitty from 'fitty';
+import Swiper from 'swiper';
+import Translator from './translate.js';
+import WebFont from 'webfontloader';
+
 window.addEventListener("DOMContentLoaded", (event) => {
+
   WebFont.load({
     google: {
       families: ["Montserrat:300,400,500,600,700,800"],
@@ -25,7 +33,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     persist: false,
     languages: ["en", "pl"],
     defaultLanguage: "en",
-    detectLanguage: true,
+    detectLanguage: false,
     filesLocation: "/i18n",
   });
 

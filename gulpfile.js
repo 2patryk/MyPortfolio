@@ -1,18 +1,18 @@
-const { parallel, series, src, dest } = require("gulp");
+const { parallel, series, src, dest, watch } = require("gulp");
 const $ = require("gulp-load-plugins")({ lazy: true });
 
-var responsive = require("gulp-responsive");
 var del = require("del");
 var browserSync = require("browser-sync").create();
-var purgecss = require("gulp-purgecss");
-var useref = require("gulp-useref");
-var gulpif = require("gulp-if");
 var uglify = require("gulp-uglify-es").default;
-// var minifyCss = require("gulp-clean-css");
+const webpack = require("webpack");
 
 var paths = {
   input: "app/**/*",
   output: "dist/",
+  i18n: {
+    input: "app/i18n/*",
+    output: "dist/i18n",
+  },
   html: {
     input: "app/*.html",
     output: "dist/",
@@ -26,7 +26,7 @@ var paths = {
     output: "dist/js",
   },
   images: {
-    input: "app/images/*/**.{png,jpg}",
+    input: "app/images/**/*.{png,jpg}",
     output: "dist/images/",
   },
 };
@@ -36,43 +36,24 @@ function clean(cb) {
   cb();
 }
 
-// function optimize(cb) {
-//   return src(["app/**/*","!app/images/**/*"])
+// function js(cb) {
+//   return src(paths.scripts.input)
 //     .pipe($.if("*.js", uglify()))
-//     .pipe(
-//       $.if(
-//         "*.css",
-//         $.purgecss({
-//           content: ["app/*.html"],
-//         })
-//       )
-//     )
-//     .pipe($.if("*.css", $.cleanCss()))
-//     .pipe($.concat('style.min.css'))
-//     .pipe($.useref())
-//     .pipe(dest("dist"));
+//     .pipe($.concat("scripts.js"))
+//     .pipe(dest(paths.scripts.output));
 // }
 
-function js(cb) {
-  return src(paths.scripts.input)
-    .pipe($.if("*.js", uglify()))
-    .pipe($.concat("scripts.js"))
-    .pipe(dest(paths.scripts.output));
-}
-
 function css(cb) {
-  return src(paths.styles.input)
-    .pipe(
-      $.if(
-        "*.css",
-        $.purgecss({
-          content: ["app/*.html"],
-        })
-      )
-    )
-    .pipe(
-      $.if(
-        "*.css",
+  return (
+    src([paths.styles.input, "!app/css/styles.css"])
+      .pipe(src("app/css/styles.css"))
+      // .pipe(
+      //   $.purgecss({
+      //     content: [paths.html.input,paths.scripts.input],
+      //   })
+      // )
+      .pipe($.autoprefixer())
+      .pipe(
         $.cleanCss({
           level: {
             1: {
@@ -81,9 +62,16 @@ function css(cb) {
           },
         })
       )
-    )
-    .pipe($.concat("style.min.css"))
-    .pipe(dest(paths.styles.output));
+      .pipe($.concat("style.min.css"))
+      .pipe(dest(paths.styles.output))
+      .pipe(browserSync.stream())
+  );
+}
+
+function watchChanges() {
+  watch(paths.styles.input, { usePolling: true }, series(css));
+  watch(paths.scripts.input, series(js));
+  watch(paths.html.input).on("change", browserSync.reload);
 }
 
 function html(cb) {
@@ -99,86 +87,79 @@ function html(cb) {
     .pipe(dest(paths.html.output));
 }
 
-// gulp.task("html", async function () {
-//   return gulp
-//     .src(["app/**/*","!app/images/**/*"])
-//     .pipe(useref())
-//     .pipe(gulpif("*.js", uglify()))
-//     .pipe(gulp.dest("dist"));
-// });
+function i18n() {
+  return src(paths.i18n.input).pipe(dest(paths.i18n.output));
+}
 
-// gulp.task("css", () => {
-//   return gulp
-//     .src("app/**/*.css")
-//     .pipe(
-//       purgecss({
-//         content: ["app/**/*.html"],
-//       })
-//     )
-//     .pipe(minifyCss())
-//     .pipe(gulp.dest("dist"));
-// });
+function server(cb) {
+  browserSync.init({
+    server: {
+      baseDir: "./dist",
+    },
+    notify: false,
+    open: true,
+  });
 
-// gulp.task("browserSync", function () {
-//   browserSync.init({
-//     server: {
-//       baseDir: "app",
-//     },
-//   });
-// });
+  cb();
+}
 
-// gulp.task("images", function () {
-//   return gulp
-//     .src("app/images/**/*")
-//     .pipe(
-//       responsive(
-//         {
-//           "slider/**/*": [
-//             {
-//               height: 190,
-//               rename: { suffix: "-1x", extname: ".webp" },
-//             },
-//             {
-//               height: 290,
-//               rename: { suffix: "-2x", extname: ".webp" },
-//             },
-//             {
-//               height: 500,
-//               rename: { suffix: "-3x", extname: ".webp" },
-//             },
-//             {
-//               rename: { extname: ".webp" },
-//             },
-//           ],
-//           "**/*": {
-//             rename: { extname: ".webp" },
-//           },
-//         },
-//         {
-//           quality: 70,
-//           progressive: true,
-//           withMetadata: false,
-//           withoutEnlargement: true,
-//           skipOnEnlargement: false, // that option copy original file with/without renaming
-//           errorOnEnlargement: false,
-//         }
-//       )
-//     )
-//     .pipe(gulp.dest("dist/images"));
-// });
+function js(cb) {
+  return webpack(require("./webpack.config.js"), function (err, stats) {
+    if (err) throw err;
+    browserSync.reload();
+    cb();
+  });
+}
 
-// gulp.task("clean:dist", async () => {
-//   return del.sync("dist");
-// });
+function images() {
+  return src(paths.images.input)
+    .pipe(
+      $.responsive(
+        {
+          "**/*": {
+            rename: { extname: ".webp" },
+          },
+          "slider/**/*": [
+            {
+              height: 190,
+              rename: { extname: ".webp" },
+            },
+            {
+              height: 290,
+              rename: { suffix: "-290h", extname: ".webp" },
+            },
+            {
+              height: 500,
+              rename: { suffix: "-500h", extname: ".webp" },
+            },
+            {
+              rename: { extname: "-original.webp" },
+            },
+          ],
+          
+        },
+        {
+          quality: 70,
+          progressive: true,
+          withMetadata: false,
+          withoutEnlargement: true,
+          skipOnEnlargement: false,
+          errorOnEnlargement: false,
+        }
+      )
+    )
+    .pipe(dest(paths.images.output));
+}
 
-// gulp.task("default", gulp.series("clean:dist"));
+exports.images = series(images);
 
-// gulp.task("build", gulp.series("clean:dist", "css", "html", "images"));
-
-// gulp.task("default", gulp.series("clean:dist"));
-
-// gulp.task("build", gulp.series("clean:dist", "optimize"));
-
-exports.default = series(clean);
-
-exports.build = series(clean, series(js, css, html));
+exports.default = series(
+  clean,
+  js,
+  css,
+  html,
+  i18n,
+  server,
+  images,
+  watchChanges
+);

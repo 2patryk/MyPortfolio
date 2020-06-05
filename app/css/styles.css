@@ -241,7 +241,7 @@ header.sticky:not(.overlay) {
 header .logo > span {
   display: inline-block;
   text-indent: -9999em;
-  background-image: url(../images/logo_black.png);
+  background-image: url(../images/logo_black.webp);
   background-size: calc(400px * 0.1) calc(366px * 0.1);
   height: calc(366px * 0.1);
   width: calc(400px * 0.1);
@@ -736,7 +736,7 @@ width:auto;
     opacity: 0.85;
   }
   header .logo > span {
-    background-image: url(../images/logo_white.png);
+    background-image: url(../images/logo_white.webp);
   }
   .landing-background::before {
     background: linear-gradient(

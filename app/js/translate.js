@@ -1,7 +1,7 @@
 // Based on Andreas Remdt
 // https://codeburst.io/translating-your-website-in-pure-javascript-98b9fa4ce427
 
-class Translator {
+export default class Translator {
   constructor(options = {}) {
     this._options = Object.assign({}, this.defaultConfig, options);
     this._lang = this.getLanguage();
