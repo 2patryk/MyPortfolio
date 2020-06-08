@@ -32,14 +32,18 @@
   "projects":{
     "buttons":{
       "preview": "Live preview",
-      "source": "Source code"
+      "source": "Source code",
+      "apk":"Download APK"
     },
     "project":{
       "myrestaurant":{
-        "description":"A web application - restaurant aggregator providing services services: ordering food, booking tables and a combination of both."
+        "description":"Web application - restaurant aggregator providing services: ordering food, booking tables and a combination of both."
       },
       "covid":{
-        "description":"A web application presenting statistics on the incidence of Coronavirus worldwide."
+        "description":"Web application presenting statistics on the incidence of Coronavirus worldwide."
+      },
+      "bikes":{
+        "description":"Mobile application allowing to view bicycle stations in most systems in Poland."
       }
     }
   }

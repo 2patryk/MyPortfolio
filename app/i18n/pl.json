@@ -32,7 +32,8 @@
     "projects":{
         "buttons":{
           "preview": "Podgląd",
-          "source": "Kod źródłowy"
+          "source": "Kod źródłowy",
+          "apk":"Poberz APK"
         },
         "project":{
           "myrestaurant":{
@@ -40,6 +41,9 @@
           },
           "covid":{
             "description":"Aplikacja internetowa prezentująca statystyki dotyczące zachorowalności na Koronawirusa na całym świecie."
+          },
+          "bikes":{
+            "description":"Aplikacja mobilna pozwalająca na podgląd stacji rowerowych w większości systemów w Polsce."
           }
         }
       }

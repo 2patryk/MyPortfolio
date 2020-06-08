@@ -44,6 +44,8 @@ jspm_packages/
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 dist/
+app/img/
+app/fonts/
 
 # TypeScript cache
 *.tsbuildinfo

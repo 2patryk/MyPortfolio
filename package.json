@@ -13,6 +13,7 @@
     "@babel/preset-env": "^7.10.2",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
+    "css-loader": "^3.5.3",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
@@ -27,11 +28,16 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-useref": "^4.0.1",
     "run-sequence": "^2.2.1",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0"
   },
   "dependencies": {
     "aos": "^2.3.4",
     "fitty": "^2.3.0",
+    "lg-thumbnail": "^1.2.0",
+    "lg-thumbnail.js": "^1.2.0",
+    "lg-zoom.js": "^1.2.0",
+    "lightgallery.js": "^1.2.0",
     "swiper": "^5.4.2",
     "webfontloader": "^1.6.28"
   }

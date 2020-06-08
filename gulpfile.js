@@ -36,12 +36,6 @@ function clean(cb) {
   cb();
 }
 
-// function js(cb) {
-//   return src(paths.scripts.input)
-//     .pipe($.if("*.js", uglify()))
-//     .pipe($.concat("scripts.js"))
-//     .pipe(dest(paths.scripts.output));
-// }
 
 function css(cb) {
   return (
@@ -71,7 +65,7 @@ function css(cb) {
 function watchChanges() {
   watch(paths.styles.input, { usePolling: true }, series(css));
   watch(paths.scripts.input, series(js));
-  watch(paths.html.input).on("change", browserSync.reload);
+  watch(paths.html.input, series(html));
 }
 
 function html(cb) {
@@ -84,7 +78,8 @@ function html(cb) {
         }),
       })
     )
-    .pipe(dest(paths.html.output));
+    .pipe(dest(paths.html.output))
+    .pipe(browserSync.stream());
 }
 
 function i18n() {
@@ -116,30 +111,95 @@ function images() {
     .pipe(
       $.responsive(
         {
-          "**/*": {
-            rename: { extname: ".webp" },
-          },
           "slider/**/*": [
             {
-              height: 190,
-              rename: { extname: ".webp" },
-            },
-            {
               height: 290,
-              rename: { suffix: "-290h", extname: ".webp" },
+              rename: { suffix: "-1x", extname: ".webp" },
             },
             {
               height: 500,
-              rename: { suffix: "-500h", extname: ".webp" },
+              rename: { suffix: "-2x", extname: ".webp" },
             },
             {
               rename: { extname: "-original.webp" },
             },
+            {
+              rename: { extname: "-original.jpg" },
+            },
+            {
+              height:290,
+              rename: { extname: ".jpg" },
+            },
+          ],
+          "about/**/*": [
+            {
+              width: 250,
+              rename: { suffix: "-1x", extname: ".webp" },
+            },
+            {
+              width: 400,
+              rename: { suffix: "-2x", extname: ".webp" },
+            },
+            {
+              rename: { extname: "-original.webp" },
+            },
+            {
+              height:250,
+              rename: { extname: ".jpg" },
+            }],
+            "projects/**/*": [
+              {
+                height: 50,
+                rename: { suffix: "-1x", extname: ".webp" },
+              },
+              {
+                height: 100,
+                rename: { suffix: "-2x", extname: ".webp" },
+              },
+              {
+                rename: { extname: "-original.webp" },
+              },
+              
+              {
+                height:100,
+                rename: { extname: ".png" },
+              }],
+            "logos/**/*": [
+              {
+                height: 75,
+                rename: { suffix: "-1x", extname: ".webp" },
+              },
+              {
+                height: 150,
+                rename: { suffix: "-2x", extname: ".webp" },
+              },
+              {
+                rename: { extname: "-original.webp" },
+              },
+              {
+                height:100,
+                rename: { extname: ".png" },
+              }],
+            "others/**/*": [
+              {
+                width: 300,
+                rename: { suffix: "-1x", extname: ".webp" },
+              },
+              {
+                width: 500,
+                rename: { suffix: "-2x", extname: ".webp" },
+              },
+              {
+                rename: { extname: "-original.webp" },
+              },
+              {
+                rename: { extname: ".jpg" },
+              },
           ],
           
         },
         {
-          quality: 70,
+          quality: 80,
           progressive: true,
           withMetadata: false,
           withoutEnlargement: true,

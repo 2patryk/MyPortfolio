@@ -45,6 +45,10 @@
     />
 
     <!-- htmlbuild:css -->
+    <link
+      href="../node_modules/lightgallery.js/dist/css/lightgallery.min.css"
+      rel="stylesheet"
+    />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/swiper.min.css" rel="stylesheet" />
     <link href="css/aos.css" rel="stylesheet" />
@@ -203,58 +207,190 @@
               <div class="col-lg-7">
                 <div class="gallery">
                   <div class="gallery-col">
-                    <img
-                      alt="Bike"
-                      data-aos="fade-up"
-                      data-aos-delay="100"
-                      src="images/about/bike2.webp"
-                    />
-                    <img
-                      alt="Another bike"
-                      data-aos="fade-up"
-                      data-aos-delay="300"
-                      src="images/about/bike.webp"
-                    />
-                    <img
-                      alt="Sunshine"
-                      data-aos="fade-up"
-                      data-aos-delay="500"
-                      src="images/about/sun.webp"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/bike2-1x.webp,
+                          images/about/bike2-2x.webp       2x,
+                          images/about/bike2-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/about/bike2.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/bike2.jpg"
+                        alt="Bike"
+                      />
+                    </picture>
+
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/bike-1x.webp,
+                          images/about/bike-2x.webp       2x,
+                          images/about/bike-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/about/bike.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/bike.jpg"
+                        alt="Another bike"
+                      />
+                    </picture>
+
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/sun-1x.webp,
+                          images/about/sun-2x.webp       2x,
+                          images/about/sun-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source srcset="images/about/sun.jpg" type="image/jpeg" />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="500"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/sun.jpg"
+                        alt="Sunshine"
+                      />
+                    </picture>
                   </div>
                   <div class="gallery-col">
-                    <img
-                      alt="Plane"
-                      data-aos="fade-up"
-                      data-aos-delay="150"
-                      src="images/about/air.webp"
-                    />
-                    <img
-                      alt="Planes show"
-                      data-aos="fade-up"
-                      data-aos-delay="350"
-                      src="images/about/planes.webp"
-                    />
-                    <img
-                      alt="Sea"
-                      data-aos="fade-up"
-                      data-aos-delay="550"
-                      src="images/about/sea.webp"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/air-1x.webp,
+                          images/about/air-2x.webp       2x,
+                          images/about/air-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source srcset="images/about/air.jpg" type="image/jpeg" />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="150"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/air.jpg"
+                        alt="Plane"
+                      />
+                    </picture>
+
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/planes-1x.webp,
+                          images/about/planes-2x.webp       2x,
+                          images/about/planes-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/about/planes.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="350"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/planes.jpg"
+                        alt="Planes show"
+                      />
+                    </picture>
+
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/sea-1x.webp,
+                          images/about/sea-2x.webp       2x,
+                          images/about/sea-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source srcset="images/about/sea.jpg" type="image/jpeg" />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="550"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/sea.jpg"
+                        alt="Sea"
+                      />
+                    </picture>
                   </div>
                   <div class="gallery-col">
-                    <img
-                      alt="Winter fish eye"
-                      data-aos="fade-up"
-                      data-aos-delay="200"
-                      src="images/about/winter.webp"
-                    />
-                    <img
-                      alt="Escooter"
-                      data-aos="fade-up"
-                      data-aos-delay="600"
-                      src="images/about/escooter.webp"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/winter-1x.webp,
+                          images/about/winter-2x.webp       2x,
+                          images/about/winter-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/about/winter.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="200"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/winter.jpg"
+                        alt="Winter fish eye"
+                      />
+                    </picture>
+
+                    <picture>
+                      <source
+                        srcset="
+                          images/about/escooter-1x.webp,
+                          images/about/escooter-2x.webp       2x,
+                          images/about/escooter-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/about/escooter.jpg"
+                        type="image/jpeg"
+                      />
+                      <img
+                        data-aos="fade-up"
+                        data-aos-delay="600"
+                        loading="lazy"
+                        height="500"
+                        width="750"
+                        src="images/about/escooter.jpg"
+                        alt="Escooter"
+                      />
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -336,12 +472,26 @@
               <div class="row">
                 <div class="col-lg-4">
                   <div class="project__description">
-                    <img
-                      alt="My restaurant logo"
-                      data-aos="fade-up"
-                      class="project__logo project__logo--myrestaurant"
-                      src="./images/mr_logo.webp"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          images/projects/mr_logo-1x.webp,
+                          images/projects/mr_logo-2x.webp       2x,
+                          images/projects/mr_logo-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/projects/mr_logo.png"
+                        type="image/png"
+                      />
+                      <img
+                        class="project__logo project__logo--myrestaurant"
+                        loading="lazy"
+                        src="images/projects/mr_logo.png"
+                        alt="My restaurant logo"
+                      />
+                    </picture>
                     <h5
                       data-aos="fade-up"
                       data-aos-delay="100"
@@ -358,11 +508,28 @@
                       data-aos="fade-up"
                       data-aos-delay="200"
                     >
-                      <img
-                        alt="Angular logo"
-                        class="project__technology"
-                        src="images/technologies/angular_white.webp"
-                      />
+                      <picture>
+                        <source
+                          srcset="
+                            images/projects/angular_white-1x.webp,
+                            images/projects/angular_white-2x.webp       2x,
+                            images/projects/angular_white-original.webp 3x
+                          "
+                          type="image/webp"
+                        />
+                        <source
+                          srcset="images/projects/angular_white.png"
+                          type="image/png"
+                        />
+                        <img
+                          class="project__technology"
+                          loading="lazy"
+                          height="35"
+                          width="150"
+                          src="images/projects/angular_white.png"
+                          alt="Angular logo"
+                        />
+                      </picture>
                     </div>
 
                     <div
@@ -385,7 +552,7 @@
                   </div>
                 </div>
                 <div class="col-lg-8">
-                  <div class="project__images">
+                  <div class="project__images light-gallery">
                     <div
                       class="swiper-container swiper-container--right"
                       data-aos="fade-left"
@@ -394,65 +561,182 @@
                       <!-- Additional required wrapper -->
                       <div class="swiper-wrapper">
                         <!-- Slides -->
-                        <div class="project__image-container slide">
-                          <img
-                            alt="MyRestaurant screenshot mobile view - order list"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/myrestaurant/mobile.webp"
-                          />
+                        <div
+                          data-src="images/slider/myrestaurant/mobile-original.webp"
+                          class="project__image-container slide"
+                        >
+                          <a
+                            href="images/slider/myrestaurant/mobile-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/myrestaurant/mobile-1x.webp,
+                                  images/slider/myrestaurant/mobile-2x.webp       2x,
+                                  images/slider/myrestaurant/mobile-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/myrestaurant/mobile.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/myrestaurant/mobile.jpg"
+                                alt="MyRestaurant screenshot mobile view - order list"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="MyRestaurant screenshot desktop view - homepage"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/myrestaurant/desktop.webp"
-                          />
+                          <a
+                            href="images/slider/myrestaurant/desktop-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/myrestaurant/desktop-1x.webp,
+                                  images/slider/myrestaurant/desktop-2x.webp       2x,
+                                  images/slider/myrestaurant/desktop-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/myrestaurant/desktop.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/myrestaurant/desktop.jpg"
+                                alt="MyRestaurant screenshot desktop view - homepage"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="MyRestaurant screenshot - restaurant view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/myrestaurant/menu.webp"
-                          />
+                          <a
+                            href="images/slider/myrestaurant/menu-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/myrestaurant/menu-1x.webp,
+                                  images/slider/myrestaurant/menu-2x.webp       2x,
+                                  images/slider/myrestaurant/menu-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/myrestaurant/menu.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/myrestaurant/menu.jpg"
+                                alt="MyRestaurant screenshot - restaurant view"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="MyRestaurant screenshot - order view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/myrestaurant/order.webp"
-                          />
+                          <a
+                            href="images/slider/myrestaurant/order-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/myrestaurant/order-1x.webp,
+                                  images/slider/myrestaurant/order-2x.webp       2x,
+                                  images/slider/myrestaurant/order-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/myrestaurant/order.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/myrestaurant/order.jpg"
+                                alt="MyRestaurant screenshot - order view"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="MyRestaurant screenshot - panel view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/myrestaurant/panel.webp"
-                          />
+                          <a
+                            href="images/slider/myrestaurant/panel-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/myrestaurant/panel-1x.webp,
+                                  images/slider/myrestaurant/panel-2x.webp       2x,
+                                  images/slider/myrestaurant/panel-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/myrestaurant/panel.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/myrestaurant/panel.jpg"
+                                alt="MyRestaurant screenshot - panel view"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="MyRestaurant screenshot - menu edit view "
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/myrestaurant/edit.webp"
-                          />
+                          <a
+                            href="images/slider/myrestaurant/edit-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/myrestaurant/edit-1x.webp,
+                                  images/slider/myrestaurant/edit-2x.webp       2x,
+                                  images/slider/myrestaurant/edit-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/myrestaurant/edit.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/myrestaurant/edit.jpg"
+                                alt="MyRestaurant screenshot - menu edit view"
+                              />
+                            </picture>
+                          </a>
                         </div>
                       </div>
 
@@ -464,11 +748,12 @@
               </div>
             </div>
           </div>
+
           <div class="project project--covid" data-aos="fade">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-lg-6">
-                  <div class="project__images">
+                  <div class="project__images light-gallery">
                     <div
                       class="swiper-container swiper-container--left"
                       data-aos="fade-right"
@@ -478,65 +763,153 @@
                       <div class="swiper-wrapper">
                         <!-- Slides -->
                         <div class="project__image-container slide">
-                          <img
-                            alt="Project covid screenshot - dark mode"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/covid/darkc.webp"
-                          />
+                          <a
+                            href=" images/slider/covid/darkc-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/covid/darkc-1x.webp,
+                                  images/slider/covid/darkc-2x.webp       2x,
+                                  images/slider/covid/darkc-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/covid/darkc.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/covid/darkc.jpg"
+                                alt="Project covid screenshot - dark mode"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="Project covid screenshot - dark mode another view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/covid/darko.webp"
-                          />
+                          <a
+                            href=" images/slider/covid/darko-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/covid/darko-1x.webp,
+                                  images/slider/covid/darko-2x.webp       2x,
+                                  images/slider/covid/darko-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/covid/darko.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/covid/darko.jpg"
+                                alt="Project covid screenshot - dark mode another view"
+                              />
+                            </picture>
+                          </a>
                         </div>
                         <div class="project__image-container slide">
-                          <img
-                            alt="Project covid screenshot - desktop view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            srcset="images/slider/covid/desktop.webp,
-                            images/slider/covid/desktop-290h.webp 1.5x,
-                            images/slider/covid/desktop-500h.webp 2x,
-                            images/slider/covid/desktop-original.webp 3x"
-                            src="images/slider/covid/desktop.webp"
-                          />
+                          <a
+                            href=" images/slider/covid/desktop-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/covid/desktop-1x.webp,
+                                  images/slider/covid/desktop-2x.webp       2x,
+                                  images/slider/covid/desktop-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/covid/desktop.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/covid/desktop.jpg"
+                                alt="Project covid screenshot - desktop view"
+                              />
+                            </picture>
+                          </a>
                         </div>
 
                         <div class="project__image-container slide">
-                          <img
-                            alt="Project covid screenshot - desktop another view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/covid/desktosp.webp"
-                          />
+                          <a
+                            href=" images/slider/covid/desktosp-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/covid/desktosp-1x.webp,
+                                  images/slider/covid/desktosp-2x.webp       2x,
+                                  images/slider/covid/desktosp-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/covid/desktosp.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/covid/desktosp.jpg"
+                                alt="Project covid screenshot - desktop another view"
+                              />
+                            </picture>
+                          </a>
                         </div>
 
                         <div class="project__image-container slide">
-                          <img
-                            alt="Project covid screenshot - mobile view"
-                            class="project__image"
-                            loading="lazy"
-                            height="500"
-                            width="1000"
-                            src="images/slider/covid/mobile.webp"
-                          />
+                          <a
+                            href=" images/slider/covid/mobile-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/covid/mobile-1x.webp,
+                                  images/slider/covid/mobile-2x.webp       2x,
+                                  images/slider/covid/mobile-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/covid/mobile.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="500"
+                                width="750"
+                                src="images/slider/covid/mobile.jpg"
+                                alt="Project covid screenshot - mobile view"
+                              />
+                            </picture>
+                          </a>
                         </div>
                       </div>
-                      <!-- If we need pagination -->
-                      <!-- <div class="swiper-pagination"></div> -->
-
                       <!-- If we need navigation buttons -->
                       <div class="swiper-button-prev"></div>
                       <div class="swiper-button-next"></div>
@@ -545,12 +918,40 @@
                 </div>
                 <div class="col-lg-4">
                   <div class="project__description">
-                    <img
-                      alt="Project covid logo"
-                      data-aos="fade-up"
-                      class="project__logo project__logo--covid"
-                      src="./images/covid_logo.webp"
-                    />
+                    <picture>
+                      <source
+                        srcset="
+                          images/projects/covid_logo_white-1x.webp,
+                          images/projects/covid_logo_white-2x.webp       2x,
+                          images/projects/covid_logo_white-original.webp 3x
+                        "
+                        media="(prefers-color-scheme: dark)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          images/projects/covid_logo-1x.webp,
+                          images/projects/covid_logo-2x.webp       2x,
+                          images/projects/covid_logo-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/projects/covid_logo_white.png"
+                        type="image/png"
+                        media="(prefers-color-scheme: dark)"
+                      />
+                      <source
+                        srcset="images/projects/covid_logo.png"
+                        type="image/png"
+                      />
+                      <img
+                        class="project__logo project__logo--covid"
+                        loading="lazy"
+                        src="images/projects/covid_logo.png"
+                        alt="Project covid logo"
+                      />
+                    </picture>
                     <h5
                       class="project__title project__title--covid"
                       data-i18n="projects.project.covid.description"
@@ -560,15 +961,47 @@
                     </h5>
 
                     <div
-                      class="project__technologies project__technologies--bigger"
+                      class="project__technologies"
                       data-aos="fade-up"
                       data-aos-delay="200"
                     >
-                      <img
-                        alt="React logo"
-                        class="project__technology"
-                        src="images/technologies/react_logo_normal.webp"
-                      />
+                      <picture>
+                        <source
+                          srcset="
+                            images/projects/react_logo-1x.webp,
+                            images/projects/react_logo-2x.webp       2x,
+                            images/projects/react_logo-original.webp 3x
+                          "
+                          media="(prefers-color-scheme: dark)"
+                          type="image/webp"
+                        />
+                        <source
+                          srcset="
+                            images/projects/react_logo_normal-1x.webp,
+                            images/projects/react_logo_normal-2x.webp       2x,
+                            images/projects/react_logo_normal-original.webp 3x
+                          "
+                          type="image/webp"
+                        />
+
+                        <source
+                          srcset="images/projects/react_logo.png"
+                          type="image/png"
+                          media="(prefers-color-scheme: dark)"
+                        />
+                        <source
+                          srcset="images/projects/react_logo_normal.png"
+                          type="image/png"
+                        />
+                        <img
+                          class="project__technology project__technology--bigger"
+                          loading="lazy"
+                          height="35"
+                          width="150"
+                          src="images/projects/react_logo_normal.png"
+                          alt="React logo"
+                        />
+                      </picture>
                     </div>
 
                     <div
@@ -596,6 +1029,319 @@
                   </div>
                 </div>
                 <div class="col-lg-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project project--bikes" data-aos="fade">
+            <div class="container-fluid container-right">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="project__description">
+                    <picture>
+                      <source
+                        srcset="
+                          images/projects/bikes_white-1x.webp,
+                          images/projects/bikes_white-2x.webp       2x,
+                          images/projects/bikes_white-original.webp 3x
+                        "
+                        media="(prefers-color-scheme: dark)"
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="
+                          images/projects/bikes-1x.webp,
+                          images/projects/bikes-2x.webp       2x,
+                          images/projects/bikes-original.webp 3x
+                        "
+                        type="image/webp"
+                      />
+                      <source
+                        srcset="images/projects/bikes_white.png"
+                        media="(prefers-color-scheme: dark)"
+                        type="image/png"
+                      />
+                      <source
+                        srcset="images/projects/bikes.png"
+                        type="image/png"
+                      />
+                      <img
+                        class="project__logo project__logo--myrestaurant"
+                        loading="lazy"
+                        src="images/projects/bikes.png"
+                        alt="GdzieJestRower logo"
+                      />
+                    </picture>
+                    <h5
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                      class="project__title project__title--bikes"
+                      data-i18n="projects.project.bikes.description"
+                    >
+                      Aplikacja mobilna pozwalająca na podgląd stacji rowerowych
+                      w większości systemów w Polsce
+                    </h5>
+
+                    <div
+                      class="project__technologies"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
+                      <picture>
+                        <source
+                          srcset="
+                            images/projects/android_white-1x.webp,
+                            images/projects/android_white-2x.webp       2x,
+                            images/projects/android_white-original.webp 3x
+                          "
+                          media="(prefers-color-scheme: dark)"
+                          type="image/webp"
+                        />
+
+                        <source
+                          srcset="
+                            images/projects/android-1x.webp,
+                            images/projects/android-2x.webp       2x,
+                            images/projects/android-original.webp 3x
+                          "
+                          type="image/webp"
+                        />
+                        <source
+                          srcset="images/projects/android_white.png"
+                          media="(prefers-color-scheme: dark)"
+                          type="image/png"
+                        />
+                        <source
+                          srcset="images/projects/android.png"
+                          type="image/png"
+                        />
+
+                        <img
+                          class="project__technology project__technology--lower"
+                          loading="lazy"
+                          height="35"
+                          width="150"
+                          src="images/projects/android.png"
+                          alt="Android logo"
+                        />
+                      </picture>
+                    </div>
+
+                    <div
+                      class="project__buttons"
+                      data-aos="fade-up"
+                      data-aos-delay="300"
+                    >
+                      <a
+                        target="_blank"
+                        rel="noopener"
+                        href="https://github.com/patrykordon/GdzieJestRower/blob/master/GdzieJestRower.apk"
+                        class="button button--dark-fill project__button"
+                        data-i18n="projects.buttons.apk"
+                        >Pobierz apk</a
+                      >
+                      <a
+                        target="_blank"
+                        rel="noopener"
+                        href="https://github.com/patrykordon/GdzieJestRower"
+                        class="button button--dark project__button"
+                        data-i18n="projects.buttons.source"
+                        >Kod źrodłowy</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8">
+                  <div class="project__images light-gallery">
+                    <div
+                      class="swiper-container swiper-container--right"
+                      data-aos="fade-left"
+                      data-aos-delay="300"
+                    >
+                      <!-- Additional required wrapper -->
+                      <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="project__image-container slide">
+                          <a
+                            href="images/slider/bikes/all-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/bikes/all-1x.webp,
+                                  images/slider/bikes/all-2x.webp       2x,
+                                  images/slider/bikes/all-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/bikes/all.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="1920"
+                                width="1080"
+                                src="images/slider/bikes/all.jpg"
+                                alt="Map with city bike stations"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                        <div class="project__image-container slide">
+                          <a
+                            href="images/slider/bikes/selected-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/bikes/selected-1x.webp,
+                                  images/slider/bikes/selected-2x.webp       2x,
+                                  images/slider/bikes/selected-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/bikes/selected.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="1920"
+                                width="1080"
+                                src="images/slider/bikes/selected.jpg"
+                                alt="Map with selected city bike stations"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                        <div class="project__image-container slide">
+                          <a
+                            href="images/slider/bikes/stations-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/bikes/stations-1x.webp,
+                                  images/slider/bikes/stations-2x.webp       2x,
+                                  images/slider/bikes/stations-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/bikes/stations.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="1920"
+                                width="1080"
+                                src="images/slider/bikes/stations.jpg"
+                                alt="Map with several bike stations"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                        <div class="project__image-container slide">
+                          <a
+                            href="images/slider/bikes/list_of_bikes-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/bikes/list_of_bikes-1x.webp,
+                                  images/slider/bikes/list_of_bikes-2x.webp       2x,
+                                  images/slider/bikes/list_of_bikes-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/bikes/list_of_bikes.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="1920"
+                                width="1080"
+                                src="images/slider/bikes/list_of_bikes.jpg"
+                                alt="List of bikes at the selected station"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                        <div class="project__image-container slide">
+                          <a
+                            href="images/slider/bikes/search-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/bikes/search-1x.webp,
+                                  images/slider/bikes/search-2x.webp       2x,
+                                  images/slider/bikes/search-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/bikes/search.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="1920"
+                                width="1080"
+                                src="images/slider/bikes/search.jpg"
+                                alt="Search bar - stations"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                        <div class="project__image-container slide">
+                          <a
+                            href="images/slider/bikes/search2-original.jpg"
+                            class="light-link"
+                          >
+                            <picture>
+                              <source
+                                srcset="
+                                  images/slider/bikes/search2-1x.webp,
+                                  images/slider/bikes/search2-2x.webp       2x,
+                                  images/slider/bikes/search2-original.webp 3x
+                                "
+                                type="image/webp"
+                              />
+                              <source
+                                srcset="images/slider/bikes/search2.jpg"
+                                type="image/jpeg"
+                              />
+                              <img
+                                class="project__image"
+                                loading="lazy"
+                                height="1920"
+                                width="1080"
+                                src="images/slider/bikes/search2.jpg"
+                                alt="Search bar - bicycle systems"
+                              />
+                            </picture>
+                          </a>
+                        </div>
+                      </div>
+
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -241,7 +241,7 @@ header.sticky:not(.overlay) {
 header .logo > span {
   display: inline-block;
   text-indent: -9999em;
-  background-image: url(../images/logo_black.webp);
+  background-image: url(../images/logos/logo_black.png);
   background-size: calc(400px * 0.1) calc(366px * 0.1);
   height: calc(366px * 0.1);
   width: calc(400px * 0.1);
@@ -296,8 +296,9 @@ nav > ul li {
   display: block;
   font-size: 2rem;
   color: white;
-  text-transform: uppercase;
-  letter-spacing: 3px;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-weight: 500;
   transition: 300ms;
   margin-bottom: 25px;
   width: fit-content;
@@ -518,14 +519,15 @@ nav > ul li.active::after {
   /* background: rgb(228, 228, 228); */
 }
 
+.project--bikes {
+  background: rgb(252,249,252);
+background: linear-gradient(90deg, rgb(248, 244, 248) 20%, rgb(236, 231, 236) 100%);
+}
+
 .project__logo {
   width: 250px;
   /* padding: 15px; */
   max-width: 100%;
-}
-
-.project__logo--myrestaurant {
-  /* background-color: rgba(222, 67, 67, 1); */
 }
 
 .project__logo--covid {
@@ -577,17 +579,19 @@ nav > ul li.active::after {
 
 .project__technologies{
 display: flex;
-height: 35px;
 
-}
-
-.project__technologies--bigger{
-  height: 45px;
 }
 .project__technology{
-height: 100%;
-width:auto;
+  height: 35px;
+  width:auto;
 }
+.project__technology--bigger{
+  height: 45px;
+}
+.project__technology--lower{
+  height: 20px;
+}
+
 .project__buttons {
   display: flex;
   align-items: flex-end;
@@ -623,6 +627,14 @@ width:auto;
   border-radius: 50px;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25) !important;
 }
+
+.swiper-button-next{
+  margin-right: -20px;
+}
+.swiper-button-prev{
+  margin-left: -20px;
+}
+
 
 .swiper-button-disabled {
   opacity: 0 !important;
@@ -736,7 +748,7 @@ width:auto;
     opacity: 0.85;
   }
   header .logo > span {
-    background-image: url(../images/logo_white.webp);
+    background-image: url(../images/logos/logo_white.png);
   }
   .landing-background::before {
     background: linear-gradient(
@@ -746,8 +758,10 @@ width:auto;
       rgb(75, 75, 75) 100%
     );
   }
-  .project__logo--covid {
-    filter:invert(1);
+
+  .project--bikes {
+    background: rgb(37, 37, 37);
+  background: linear-gradient(90deg, rgb(49, 48, 49) 20%, rgb(43, 23, 43) 100%);
   }
 }
 
@@ -791,6 +805,12 @@ width:auto;
 }
 
 @media (min-width: 992px) {
+  .swiper-button-next{
+    margin-right: 0;
+  }
+  .swiper-button-prev{
+    margin-left: 0;
+  }
   .project {
     padding: 45px 0;
   }

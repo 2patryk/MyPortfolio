@@ -1,11 +1,25 @@
-import AOS from 'aos';
+import AOS from "aos";
 
-import fitty from 'fitty';
-import Swiper from 'swiper';
-import Translator from './translate.js';
-import WebFont from 'webfontloader';
+import fitty from "fitty";
+import Swiper from "swiper";
+import Translator from "./translate.js";
+import WebFont from "webfontloader";
+
+import "lightgallery.js";
+// import "lg-thumbnail.js";
+import "lg-zoom.js";
+// import 'lightgallery.js/dist/css/lightgallery.min.css';
 
 window.addEventListener("DOMContentLoaded", (event) => {
+  const galleries = document.querySelectorAll(".light-gallery");
+  for (const el of galleries) {
+    lightGallery(el, {
+      selector: ".light-link",
+      // thumbnail: true,
+      zoom: true,
+      download: false,
+    });
+  }
 
   WebFont.load({
     google: {
@@ -62,7 +76,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     debounce(function () {
       let vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
-      
+
       let newMobileView = window.innerWidth < 768 ? true : false;
       if (mobileView != newMobileView) {
         mobileView = newMobileView;
@@ -106,32 +120,29 @@ window.addEventListener("DOMContentLoaded", (event) => {
     slidesPerView: "auto",
     slidesOffsetAfter: 100,
     slidesOffsetBefore: 100,
-    freeMode:true,
+    freeMode: true,
     // centeredSlides:true,
-    observer: true,  
+    observer: true,
     observeParents: true,
     slideClass: "slide",
     // centeredSlides:true,
-    
+
     // Navigation arrows
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-  }
+  };
 
   var swiperLeft = new Swiper(".swiper-container--right", {
-    
-    initialSlide:0,
-    ...defaultSwiperConfig
+    initialSlide: 0,
+    ...defaultSwiperConfig,
   });
 
   var swiperRight = new Swiper(".swiper-container--left", {
-    
-    initialSlide:4,
-    ...defaultSwiperConfig
+    initialSlide: 4,
+    ...defaultSwiperConfig,
   });
-
 
   //from Underscore.js
   function debounce(func, wait, immediate) {
