@@ -38,7 +38,7 @@
     "lg-thumbnail.js": "^1.2.0",
     "lg-zoom.js": "^1.2.0",
     "lightgallery.js": "^1.2.0",
-    "swiper": "^5.4.2",
+    "swiper": "^6.5.1",
     "webfontloader": "^1.6.28"
   }
 }
